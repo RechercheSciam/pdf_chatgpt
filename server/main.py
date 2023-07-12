@@ -6,6 +6,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.staticfiles import StaticFiles
 from loguru import logger
 
+
 from models.api import (
     DeleteRequest,
     DeleteResponse,
@@ -38,7 +39,7 @@ sub_app = FastAPI(
     title="Retrieval Plugin API",
     description="A retrieval API for querying and filtering documents based on natural language queries and metadata",
     version="1.0.0",
-    servers=[{"url": "https://your-app-url.com"}],
+    servers=[{"url": "https://lobster-app-7584n.ondigitalocean.app"}],
     dependencies=[Depends(validate_token)],
 )
 app.mount("/sub", sub_app)
